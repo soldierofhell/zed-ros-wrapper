@@ -29,7 +29,7 @@ endif()
 
 #set(CUDA_TOOLKIT_ROOT_DIR "/usr/local/cuda-10.1")
 
-print(${ZED_CUDA_VERSION})
+message("ZED_CUDA_VERSION: ${ZED_CUDA_VERSION}")
 
 find_package(CUDA ${ZED_CUDA_VERSION} EXACT)
 checkPackage("CUDA" "CUDA not found, install it from:\n https://developer.nvidia.com/cuda-downloads")
