@@ -27,9 +27,11 @@ if ( CMAKE_SYSTEM_NAME2 MATCHES "aarch64" ) # Jetson TX
     SET(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
 endif()
 
-set(CUDA_TOOLKIT_ROOT_DIR "/usr/local/cuda-10.1")
+#set(CUDA_TOOLKIT_ROOT_DIR "/usr/local/cuda-10.1")
 
-find_package(CUDA 10.1 EXACT)
+print(${ZED_CUDA_VERSION})
+
+find_package(CUDA ${ZED_CUDA_VERSION} EXACT)
 checkPackage("CUDA" "CUDA not found, install it from:\n https://developer.nvidia.com/cuda-downloads")
 
 find_package(OpenMP)
